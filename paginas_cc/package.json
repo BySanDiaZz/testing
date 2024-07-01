@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@extractus/article-extractor": "^8.0.10",
+    "puppeteer": "^22.11.1"
+  }
+}
