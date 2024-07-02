@@ -81,7 +81,7 @@ const openWebPage = async (ccLink) => {
   // Total time for site
   let totalTime = 0;
   
-  // Navigate to Visitanos
+  // Navigate to Home
 
   // Starting load time
   let startTime = Date.now();
@@ -98,9 +98,8 @@ const openWebPage = async (ccLink) => {
     totalTime += loadTime;
   });
 
-
-  // Navigate to Promociones
-  let button = 'a[href="https://www.hoteltrinitarias.com/nuestras-promociones/"]';
+  // Navigate to Tú Hospedate
+  let button = 'a[href="https://www.hoteltrinitarias.com/tu-hospedaje/"]';
   await pageTest.waitForSelector(button);
   await pageTest.click(button);
 
@@ -110,7 +109,27 @@ const openWebPage = async (ccLink) => {
   // Take a screenshot
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log2_promociones_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log2_tuhospedaje_${pageName}_${date}.png`
+    });
+
+    // Ending load time
+    let endTime = Date.now(); 
+    let loadTime = endTime - startTime;
+    totalTime += loadTime;
+  });
+
+  // Navigate to Promociones
+  button = 'a[href="https://www.hoteltrinitarias.com/nuestras-promociones/"]';
+  await pageTest.waitForSelector(button);
+  await pageTest.click(button);
+
+  // Starting load time
+  startTime = Date.now();
+
+  // Take a screenshot
+  await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
+    await pageTest.screenshot({
+      path: `./captures/${pageName}/${folderName}/log3_promociones_${pageName}_${date}.png`
     });
 
     // Ending load time
@@ -132,7 +151,7 @@ const openWebPage = async (ccLink) => {
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log3_tuevento_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log4_tuevento_${pageName}_${date}.png`
     });
 
     // Ending load time
@@ -153,7 +172,7 @@ const openWebPage = async (ccLink) => {
   // Take a screenshot
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log4_servicios_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log5_servicios_${pageName}_${date}.png`
     });
 
     // Ending load time
@@ -174,7 +193,7 @@ const openWebPage = async (ccLink) => {
   // Take a screenshot
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log5_contactanos_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log6_contactanos_${pageName}_${date}.png`
     });  
 
     // Ending load time
