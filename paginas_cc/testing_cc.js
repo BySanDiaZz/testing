@@ -13,7 +13,6 @@ const getCurrentDate = () => {
 
 // Do all
 const openWebPage = async (ccLink) => {
-
   // Launch the browser
   const browser = await puppeteer.launch({
     headless: false,
@@ -163,7 +162,7 @@ const openWebPage = async (ccLink) => {
   });
 
 
-  // Navigate to Contactanos
+  // Navigate to Contáctanos
   button = 'a[href="/contactanos/"]';
   await pageTest.waitForSelector(button);
   await pageTest.click(button);
@@ -196,15 +195,15 @@ const openWebPage = async (ccLink) => {
 
 //Constants CC Links, be careful with the structure
 const ccLinks = {
-  //Desamparados : 'https://expresodesamparados.com/',
-  //Tibas : 'https://expresotibas.com/',
-  //Chacaito : 'https://expresochacaito.com/',
-  //LaTrinidad : 'https://expresolatrinidad.com/',
-  //LasTrinitarias : 'https://cclastrinitarias.com/',
-  //Baruta : 'https://expresobaruta.com/',
-  //LaGranja : 'https://cclagranja.com/',
+  Desamparados : 'https://expresodesamparados.com/',
+  Tibas : 'https://expresotibas.com/',
+  Chacaito : 'https://expresochacaito.com/',
+  LaTrinidad : 'https://expresolatrinidad.com/',
+  LasTrinitarias : 'https://cclastrinitarias.com/',
+  Baruta : 'https://expresobaruta.com/',
+  LaGranja : 'https://cclagranja.com/',
+  GrupoIRO : 'https://grupoiro.com/',
   //HotelTrinitarias : 'https://hoteltrinitarias.com/',
-  //GrupoIRO : 'https://grupoiro.com/',
 }
 
 // Main function

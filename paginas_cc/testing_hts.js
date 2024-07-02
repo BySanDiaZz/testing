@@ -99,8 +99,8 @@ const openWebPage = async (ccLink) => {
   });
 
 
-  // Navigate to Directorio
-  let button = 'a[href="/directorio/"]';
+  // Navigate to Promociones
+  let button = 'a[href="https://www.hoteltrinitarias.com/nuestras-promociones/"]';
   await pageTest.waitForSelector(button);
   await pageTest.click(button);
 
@@ -110,7 +110,7 @@ const openWebPage = async (ccLink) => {
   // Take a screenshot
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log2_directorio_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log2_promociones_${pageName}_${date}.png`
     });
 
     // Ending load time
@@ -120,8 +120,8 @@ const openWebPage = async (ccLink) => {
   });
 
 
-  // Navigate to Negocias
-  button = 'a[href="/negocios/"]';
+  // Navigate to Tu Evento
+  button = 'a[href="https://www.hoteltrinitarias.com/tu-evento/"]';
   await pageTest.waitForSelector(button);
   await pageTest.click(button);
   
@@ -132,7 +132,7 @@ const openWebPage = async (ccLink) => {
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log3_negocios_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log3_tuevento_${pageName}_${date}.png`
     });
 
     // Ending load time
@@ -142,8 +142,8 @@ const openWebPage = async (ccLink) => {
   });
   
 
-  // Navigate to Talento
-  button = 'a[href="/talento/"]';
+  // Navigate to Servicios
+  button = 'a[href="https://www.hoteltrinitarias.com/nuestros-servicios/"]';
   await pageTest.waitForSelector(button);
   await pageTest.click(button);
 
@@ -153,7 +153,7 @@ const openWebPage = async (ccLink) => {
   // Take a screenshot
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log4_talento_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log4_servicios_${pageName}_${date}.png`
     });
 
     // Ending load time
@@ -163,8 +163,8 @@ const openWebPage = async (ccLink) => {
   });
 
 
-  // Navigate to Contactanos
-  button = 'a[href="/contactanos/"]';
+  // Navigate to Contáctanos
+  button = 'a[href="https://www.hoteltrinitarias.com/contactanos/"]';
   await pageTest.waitForSelector(button);
   await pageTest.click(button);
 
@@ -196,15 +196,7 @@ const openWebPage = async (ccLink) => {
 
 //Constants CC Links, be careful with the structure
 const ccLinks = {
-  //Desamparados : 'https://expresodesamparados.com/',
-  //Tibas : 'https://expresotibas.com/',
-  //Chacaito : 'https://expresochacaito.com/',
-  //LaTrinidad : 'https://expresolatrinidad.com/',
-  //LasTrinitarias : 'https://cclastrinitarias.com/',
-  //Baruta : 'https://expresobaruta.com/',
-  //LaGranja : 'https://cclagranja.com/',
-  //HotelTrinitarias : 'https://hoteltrinitarias.com/',
-  //GrupoIRO : 'https://grupoiro.com/',
+  HotelTrinitarias : 'https://hoteltrinitarias.com/',
 }
 
 // Main function
