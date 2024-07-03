@@ -92,7 +92,7 @@ const openWebPage = async (ccLink) => {
   // Take a screenshot
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log1_${pageName}_${date}.png`
+      path: `./captures/${pageName}/${folderName}/log1_visitanos_${pageName}_${date}.png`
     });
 
     // Ending load time

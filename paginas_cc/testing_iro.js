@@ -62,6 +62,7 @@ const openWebPage = async (ccLink) => {
   // Extract page name
   let pageName = currentUrl;
   pageName = pageName.replace('https://','');
+  pageName = pageName.replace('http://','');
   pageName = pageName.replace('.com/','');
   pageName = pageName.replace('www.','');
   pageName = pageName.replace('/','_');
@@ -101,110 +102,6 @@ const openWebPage = async (ccLink) => {
     totalTime += loadTime;
   });
 
-  // Navigate to Tú Hospedate
-  let button = 'a[href="https://www.hoteltrinitarias.com/tu-hospedaje/"]';
-  await pageTest.waitForSelector(button);
-  await pageTest.click(button);
-
-  // Starting load time
-  startTime = Date.now();
-
-  // Take a screenshot
-  await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
-    await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log2_tuhospedaje_${pageName}_${date}.png`
-    });
-
-    // Ending load time
-    let endTime = Date.now(); 
-    let loadTime = endTime - startTime;
-    totalTime += loadTime;
-  });
-
-  // Navigate to Promociones
-  button = 'a[href="https://www.hoteltrinitarias.com/nuestras-promociones/"]';
-  await pageTest.waitForSelector(button);
-  await pageTest.click(button);
-
-  // Starting load time
-  startTime = Date.now();
-
-  // Take a screenshot
-  await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
-    await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log3_promociones_${pageName}_${date}.png`
-    });
-
-    // Ending load time
-    let endTime = Date.now(); 
-    let loadTime = endTime - startTime;
-    totalTime += loadTime;
-  });
-
-
-  // Navigate to Tu Evento
-  button = 'a[href="https://www.hoteltrinitarias.com/tu-evento/"]';
-  await pageTest.waitForSelector(button);
-  await pageTest.click(button);
-  
-  // Starting load time
-  startTime = Date.now();
-
-  // Take a screenshot
-  await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
-    
-    await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log4_tuevento_${pageName}_${date}.png`
-    });
-
-    // Ending load time
-    let endTime = Date.now(); 
-    let loadTime = endTime - startTime;
-    totalTime += loadTime;
-  });
-  
-
-  // Navigate to Servicios
-  button = 'a[href="https://www.hoteltrinitarias.com/nuestros-servicios/"]';
-  await pageTest.waitForSelector(button);
-  await pageTest.click(button);
-
-  // Starting load time
-  startTime = Date.now();  
-
-  // Take a screenshot
-  await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
-    await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log5_servicios_${pageName}_${date}.png`
-    });
-
-    // Ending load time
-    let endTime = Date.now(); 
-    let loadTime = endTime - startTime;
-    totalTime += loadTime;
-  });
-
-
-  // Navigate to Contáctanos
-  button = 'a[href="https://www.hoteltrinitarias.com/contactanos/"]';
-  await pageTest.waitForSelector(button);
-  await pageTest.click(button);
-
-  // Starting load time
-  startTime = Date.now();
-
-  // Take a screenshot
-  await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
-    await pageTest.screenshot({
-      path: `./captures/${pageName}/${folderName}/log6_contactanos_${pageName}_${date}.png`
-    });  
-
-    // Ending load time
-    let endTime = Date.now(); 
-    let loadTime = endTime - startTime;
-    totalTime += loadTime;
-  });  
-
   await pageTest.waitForNetworkIdle({ idleTime: 2000 }).then(async () => {
     // Close the page
     await pageTest.close();
@@ -218,7 +115,8 @@ const openWebPage = async (ccLink) => {
 
 //Constants CC Links, be careful with the structure
 const ccLinks = {
-  HotelTrinitarias : 'https://hoteltrinitarias.com/',
+  GrupoIRO : 'https://grupoiro.com/',
+  //CainQA : 'http://200.74.198.170/saut/home.jsp',
 }
 
 // Main function
