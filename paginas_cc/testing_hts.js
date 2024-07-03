@@ -32,6 +32,9 @@ const openWebPage = async (ccLink) => {
 
   // Open a new blank page
   const pageTest = await browser.newPage();
+    
+  // Set Default Timeout on all the script actions
+  pageTest.setDefaultTimeout(100000);
 
   // Set screen size
   /*

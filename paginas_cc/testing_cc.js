@@ -23,14 +23,18 @@ const openWebPage = async (ccLink) => {
     ]
   });
 
+  
   // Default options for navigation
   const navigationOptions = {
     waitUntil: 'networkidle2',
     timeout: 999999
-  };
-
+    };
+    
   // Open a new blank page
   const pageTest = await browser.newPage();
+    
+  // Set Default Timeout on all the script actions
+  pageTest.setDefaultTimeout(100000);
 
   // Set screen size
   /*
